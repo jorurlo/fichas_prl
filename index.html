@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#1E293B"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Fichas PRL"><title>Ficha de uso seguro de equipo de trabajo – Taladro de columna</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding-top:52px;background:#cbd5e1;font:9pt/1.35 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#0f172a}
+#bar{position:fixed;top:0;left:0;right:0;z-index:9;background:#1E293B;color:#fff;display:flex;gap:8px;align-items:center;padding:8px 12px;flex-wrap:wrap}
+#bar button{border:0;border-radius:4px;padding:6px 11px;font:600 13px system-ui,sans-serif;cursor:pointer;background:#e2e8f0;color:#1E293B}
+#bar .p{background:#005BBB;color:#fff}#bar label{font-size:12px}#st{font-size:12px;opacity:.7;margin-left:auto}
+.pg{width:206mm;margin:14px auto;padding:8mm;background:#fff;box-shadow:0 2px 10px #0005}
+.e{outline:0;border-radius:2px}.e:hover{background:#fef9c3}.e:focus{background:#eff6ff;box-shadow:0 0 0 1.5px #005BBB}
+.hd{display:flex;border:1.5px solid #1E293B}
+.logo{width:42mm;height:22mm;border-right:1.5px solid #1E293B}
+.tt{flex:1;text-align:center;padding:4px 6px;display:flex;flex-direction:column;justify-content:center}
+.tt .t1{font-size:12pt;font-weight:800;color:#1E293B}.tt .t2{font-size:17pt;font-weight:900;color:#005BBB}
+.fg{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid #1E293B;border-top:0;margin-bottom:6px}
+.fg div{border:.5px solid #94a3b8;padding:2px 5px}.fg small{display:block;color:#475569;font-size:6.5pt;font-weight:700;text-transform:uppercase}
+.sec{border:1.5px solid #1E293B;margin-bottom:6px;break-inside:avoid}
+h3{margin:0;background:#1E293B;color:#fff;font-size:9pt;padding:3px 8px;letter-spacing:.3px}
+.sb{padding:5px 8px}
+.slot{position:relative;width:100%;height:100%;background:#f1f5f9;overflow:hidden;cursor:pointer}
+.slot img{width:100%;height:100%;object-fit:cover;display:block}.slot.contain img{object-fit:contain}.slot.empty img{display:none}
+.ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:4px;font-size:7.5pt;color:#64748b;border:1.5px dashed #94a3b8}
+.slot.empty .ph{display:flex}
+.sc{position:absolute;top:2px;right:2px;display:none;gap:2px}.slot:hover .sc{display:flex}.slot.empty .sc{display:none}
+.sc button{border:0;background:#1E293Bcc;color:#fff;border-radius:3px;cursor:pointer;padding:2px 6px}
+.x{border:0;background:#fee2e2;color:#DC2626;border-radius:3px;cursor:pointer;font-weight:700;line-height:1;padding:2px 6px;margin-left:auto}
+.ad{border:1px dashed #005BBB;background:#eff6ff;color:#005BBB;border-radius:3px;cursor:pointer;font:600 8pt system-ui,sans-serif;padding:2px 8px;margin-top:3px}
+.id{display:grid;grid-template-columns:78mm 1fr;gap:6px;padding:6px}
+.main{height:84mm;border:1px solid #94a3b8}
+#gal{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;align-content:start}
+.kc{position:relative;border:1px solid #94a3b8;padding:3px;break-inside:avoid}.kc .slot{height:27mm}
+.kc>.x{position:absolute;left:5px;top:5px;z-index:2}
+.kc h4{margin:3px 0 0;font-size:8.5pt;color:#1E293B}.kc p{margin:0;font-size:7.5pt;color:#334155}
+.l{margin:0;padding:0;list-style:none}.l li{display:flex;gap:5px;align-items:flex-start;padding:1px 0}
+ul.l li:before{content:"▪";color:#1E293B}.k li:before{content:none!important}ol.l{counter-reset:n}ol.l li:before{counter-increment:n;content:counter(n)".";font-weight:700;min-width:12px}
+.l .e{flex:1}input[type=checkbox]{width:13px;height:13px;margin:2px 0 0;accent-color:#005BBB}
+.ban{display:flex;align-items:center;gap:12px;border:3px solid #DC2626;background:#FEF2F2;padding:6px 10px;margin-bottom:6px}
+.ban svg{width:21mm;height:21mm;flex:none}.ban b{display:block;font-size:19pt;line-height:1.05;color:#DC2626;font-weight:900}.ban span{color:#7f1d1d;font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.two h5{margin:0 0 3px;font-size:8.5pt}
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.it{display:flex;gap:5px;align-items:center}.it svg{width:11mm;height:11mm;flex:none}.it div{display:flex;flex-direction:column}.it b{font-size:8pt}.it span{font-size:7pt;color:#334155}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px}
+.col{border:1px solid #94a3b8;padding:4px}.col h5{margin:-4px -4px 4px;padding:3px 6px;color:#fff;font-size:8.5pt}
+.oos{margin-top:5px;border:2px solid #DC2626;background:#FEF2F2;padding:4px 8px}.oos b{color:#DC2626}
+table{width:100%;border-collapse:collapse}th,td{border:.5px solid #64748b;padding:2px 5px;text-align:left;font-size:8pt}th{background:#e2e8f0;color:#1E293B}td.sg{height:13mm}
+td .e{display:block;min-height:1.2em}#rt{counter-reset:r}#rt .n:before{counter-increment:r;content:counter(r)}#rt td{height:9mm}
+@media screen and (max-width:800px){body{padding-top:0}#bar{position:sticky}.pg{width:100%;margin:8px 0;padding:8px}.id,.three,.two,.ig{grid-template-columns:1fr}.fg{grid-template-columns:1fr 1fr}.hd{flex-direction:column}.logo{width:100%;border-right:0;border-bottom:1.5px solid #1E293B}.main{height:60vw}.sb{overflow-x:auto}.ban{flex-direction:column;text-align:center}.ban b{font-size:14pt}}
+@media (hover:none){.slot:not(.empty) .sc{display:flex}.sc button{padding:6px 10px}.x{padding:6px 10px}}
+@media print{
+@page{size:A4 portrait;margin:10mm}
+html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact;background:#fff}
+body{padding:0}#bar,.ctl,.x,.ad,.sc,.ph{display:none!important}
+.pg{width:auto;margin:0;padding:0;box-shadow:none;break-after:page}.pg:last-child{break-after:auto}
+.e:hover,.e:focus{background:none;box-shadow:none}
+.sec,.kc,table,.col,.ban,tr{break-inside:avoid}
+.slot{cursor:default}.slot.empty{background:#fff;border:1px solid #cbd5e1}
+body.ho .slot.empty{display:none!important}
+}
+</style></head><body>
+<div id="bar">
+<button class="p" id="bp">🖨 Imprimir / Guardar PDF</button>
+<button class="p" id="bd">⬇ Descargar HTML editable</button>
+<button id="br">↺ Restaurar valores por defecto</button>
+<select id="ms" title="Equipo de trabajo" style="padding:5px;border-radius:4px;font:600 13px system-ui,sans-serif"></select>
+<label><input type="checkbox" id="cam"> 📷 Cámara</label>
+<label><input type="checkbox" id="hide" checked> Ocultar fotos vacías al imprimir</label>
+<span id="st">Autoguardado local activo</span></div>
+<input type="file" id="fi" accept="image/*" hidden>
+<main id="doc"></main>
+<script>
+const K0='fichaSeguridad_v2_',$=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const doc=$('#doc'),fi=$('#fi'),hd=$('#hide'),sel=$('#ms');let cur=null,mid='taladro';
+const E=(t,tag='span',c='')=>`<${tag} class="e ${c}" contenteditable="true">${t}</${tag}>`;
+const slot=(c='')=>`<div class="slot empty ${c}"><div class="ph ctl">📷 Clic o arrastra una imagen</div><img alt=""><div class="sc ctl"><button data-a="fit" title="Alternar cover / contain">⤢</button><button data-a="del" title="Borrar imagen">🗑</button></div></div>`;
+const X='<button class="x ctl" data-a="rm" title="Eliminar">×</button>';
+const mkli=(t='Nuevo elemento')=>`<li class="rm">${E(t)}${X}</li>`;
+const mkchk=(t='Nueva verificación')=>`<li class="rm"><input type="checkbox">${E(t)}${X}</li>`;
+const mkcard=(t='Nuevo punto clave',d='Descripción del punto de seguridad.')=>`<div class="kc rm">${X}${slot()}${E(t,'h4')}${E(d,'p')}</div>`;
+const ad=(t,to,l)=>`<button class="ad ctl" data-a="add" data-t="${t}" data-to="${to}">+ ${l}</button>`;
+const M=g=>`<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" fill="#005BBB"/>${g}</svg>`;
+const P=g=>`<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="#fff" stroke="#DC2626" stroke-width="5"/><g fill="#111">${g}</g><path d="M9 9L39 39" stroke="#DC2626" stroke-width="5"/></svg>`;
+const gGlove='<path d="M16 35V23l-2-6 2.5-1 2 4V12h3v9V10h3v11V11h3v11V13h3v11l1-5 3 1-1 11-3 7H20z"/>';
+const gShirt='<path d="M15 13l-8 6 4 6 4-2v15h18V23l4 2 4-6-8-6c-1 3-4 4-9 4s-8-1-9-4z"/>';
+const gRing='<circle cx="24" cy="29" r="8" fill="none" stroke="#111" stroke-width="4"/><path d="M19 19l5-7 5 7z"/>';
+const gWatch='<rect x="17" y="17" width="14" height="14" rx="3"/><path d="M20 9h8v8h-8zM20 31h8v8h-8z"/>';
+const gHand='<rect x="27" y="14" width="12" height="16"/><path d="M8 34h18v-9h-3v-6h-2.5v6H19v-9h-2.5v9H14v-6h-2.5v6H9z"/>';
+const iGog=M('<rect x="9" y="19" width="13" height="12" rx="4" fill="#fff"/><rect x="26" y="19" width="13" height="12" rx="4" fill="#fff"/><rect x="21" y="23" width="6" height="3" fill="#fff"/><path d="M9 24H6M39 24h3" stroke="#fff" stroke-width="3"/>');
+const iBoot=M('<path d="M17 10h10v13l9 4c3 1 4 3 4 5v4H13V10z" fill="#fff"/>');
+const iPers=M('<circle cx="24" cy="12" r="5" fill="#fff"/><path d="M13 38V24l6-5h10l6 5v14h-5V28h-1v10h-10V28h-1v10z" fill="#fff"/>');
+const iEar=M('<path d="M12 28v-4a12 12 0 0124 0v4" fill="none" stroke="#fff" stroke-width="3.5"/><rect x="9" y="26" width="8" height="12" rx="2.5" fill="#fff"/><rect x="31" y="26" width="8" height="12" rx="2.5" fill="#fff"/>');
+const it=(svg,t,d)=>`<div class="it">${svg}<div>${E(t,'b')}${E(d)}</div></div>`;
+const hf=['Código de documento|FUS-TAL-001','Versión|01','Fecha|'+new Date().toLocaleDateString('es-ES'),'Ubicación / Taller|Taller mecánico','Marca / Modelo|—','N.º de serie|—','Año de fabricación|—','Marcado CE / Adecuación RD 1215/1997|CE – Adecuado'];
+const kp=[['Seta de parada de emergencia','Pulsador rojo sobre fondo amarillo, accesible desde el puesto, con enclavamiento mecánico. Probar al inicio del turno.'],['Resguardo de portabrocas enclavado','Pantalla transparente regulable con microinterruptor: la máquina no arranca con ella abierta.'],['Mordaza de sujeción de pieza','Sujetar siempre la pieza con mordaza o bridas fijadas a la mesa; nunca con la mano.'],['Tapa de poleas con microinterruptor','Carcasa cerrada y enclavada. Parar y desconectar antes de abrirla para cambiar la velocidad.']];
+const rk=['Atrapamiento por husillo, broca o transmisión de poleas y correas','Proyección de virutas y fragmentos de pieza o broca','Golpes por giro incontrolado de la pieza','Cortes por virutas y rebabas','Contacto eléctrico directo o indirecto','Exposición a ruido (según material, broca y velocidad)'];
+const rg=['Pantalla protectora transparente regulable, con microinterruptor de enclavamiento','Carcasa de poleas y correas enclavada (no arranca con la tapa abierta)','Seta de parada de emergencia con enclavamiento mecánico','Pulsador de marcha protegido, con bobina de mínima tensión contra rearranque intempestivo','Sistema de sujeción mecánica de la pieza en mesa (mordaza / bridas)'];
+const pa=['Comprobar que los resguardos están en su sitio y la seta funciona','Montar la broca firme en el portabrocas y <b>retirar la llave</b> antes de arrancar','Sujetar la pieza con mordaza o bridas, nunca con la mano','Seleccionar la velocidad según material y diámetro de broca','Ajustar la pantalla protectora y la altura de la mesa'];
+const pd=['Avanzar de forma progresiva, sin forzar la broca','No sujetar nunca la pieza con la mano','No retirar la viruta con la máquina en marcha','No abandonar la máquina en funcionamiento','Detener ante vibración, ruido anómalo o broca desgastada'];
+const pp=['Esperar a la parada completa del husillo antes de aflojar la pieza','Desconectar la máquina (seccionador / pulsador de paro)','Retirar la broca y guardar útiles y llaves','Limpiar y dejar el puesto ordenado'];
+const lm=['Retirar la viruta <b>solo con cepillo o brocha</b> y con la máquina desconectada','<b>Prohibido soplar con aire comprimido</b> o limpiar con la mano','Desconectar y consignar la máquina antes de abrir la caja de poleas para cambiar la velocidad','Revisar visualmente cables, resguardos, enclavamientos y nivel de lubricación; comunicar cualquier anomalía'];
+const gPers='<circle cx="24" cy="13" r="5"/><path d="M14 40V26l5-5h10l5 5v14h-5V30h-1v10h-10V30h-1v10z"/>';
+const G={glove:gGlove,shirt:gShirt,ring:gRing,watch:gWatch,hand:gHand,pers:gPers};
+const EP={gog:iGog,boot:iBoot,pers:iPers,ear:iEar,glove:M('<g fill="#fff">'+gGlove+'</g>')};
+const T={n:'Taladro de columna',c:'FUS-TAL-001',kp,rk,rg,pa,pd,pp,lm,
+b:['glove','PROHIBIDO USAR GUANTES','Riesgo grave de atrapamiento y arrastre por el husillo o la broca en giro.'],
+ep:[['gog','Gafas de protección','Contra impactos (EN 166)'],['boot','Calzado de seguridad','Puntera y suela antideslizante'],['pers','Ropa ajustada, pelo recogido','Mangas ceñidas, sin cuerdas ni prendas sueltas'],['ear','Protección auditiva','Si se supera el nivel de acción']],
+pr:[['shirt','Ropa holgada','Ni mangas sueltas ni corbatas'],['ring','Anillos y cadenas','Ni colgantes ni piercings'],['watch','Relojes y pulseras','Retirarlos antes de trabajar'],['hand','Sujetar la pieza a mano','Usar siempre mordaza o bridas']]};
+const EPM=[['boot','Calzado de seguridad','Con puntera, contra aplastamiento'],['glove','Guantes para manipular piezas','Solo fuera de la zona de trabajo'],['gog','Gafas de protección','Contra impactos (EN 166)'],['ear','Protección auditiva','Si se supera el nivel de acción']];
+const PRM=[['hand','Manos en la zona peligrosa','Usar útiles de sujeción'],['ring','Anillos y cadenas','Ni colgantes ni pulseras'],['watch','Relojes y pulseras','Retirarlos antes de trabajar'],['pers','Dos personas con el mando','Solo un operario maneja el pedal']];
+const LIB={taladro:T,
+torno:{...T,n:'Torno paralelo',c:'FUS-TOR-001',
+kp:[['Seta de parada de emergencia','Al alcance sin abandonar el puesto, con enclavamiento. Probar al inicio del turno.'],['Protector del plato enclavado','Resguardo móvil con microinterruptor: con él abierto no gira el husillo.'],['Llave del plato: nunca puesta','Retirarla siempre tras apretar; riesgo de proyección al arrancar.'],['Pantalla contra virutas','Protege de virutas y refrigerante; mantenerla limpia y en su sitio.']],
+rk:['Atrapamiento por plato, pieza o barra en giro','Proyección de virutas, refrigerante y piezas mal sujetas','Cortes por virutas largas y filos','Golpes por llave del plato o pieza proyectada','Contacto eléctrico','Exposición a ruido y a taladrinas'],
+rg:['Protector del plato con microinterruptor de enclavamiento','Pantalla de carro contra proyecciones','Seta de parada de emergencia con enclavamiento','Protección de la barra sobresaliente (si procede)','Bobina de mínima tensión contra rearranque','Freno de plato o parada controlada'],
+pa:['Comprobar resguardos y seta de emergencia','Sujetar la pieza con firmeza y retirar la llave del plato','Ajustar velocidad y avance al material','Fijar la herramienta bien afilada y apretada','Despejar bancada y carro de objetos'],
+pd:['No tocar ni medir la pieza en movimiento','No usar lijas o telas abrasivas con la mano sobre pieza en giro','Cortar las virutas largas; no retirarlas a mano','No frenar el plato con la mano','Parar ante vibración o ruido anómalo'],
+pp:['Esperar a la parada total del plato','Desconectar la máquina','Retirar herramienta y pieza','Limpiar con cepillo y ordenar el puesto'],
+lm:['Retirar la viruta solo con gancho o cepillo y la máquina parada','<b>Prohibido soplar con aire comprimido</b> o limpiar con la mano','Desconectar antes de cambiar engranajes o correas','Revisar resguardos, enclavamientos, cables y nivel de aceite'],
+b:['glove','PROHIBIDO USAR GUANTES','Riesgo grave de atrapamiento por el plato, la barra o la pieza en giro.'],
+pr:[...T.pr.slice(0,3),['hand','Tocar la pieza en giro','Ni medir ni limpiar en marcha']]},
+fresadora:{...T,n:'Fresadora',c:'FUS-FRE-001',
+kp:[['Seta de parada de emergencia','Visible y accesible, con enclavamiento. Probar al inicio del turno.'],['Protector de fresa enclavado','Cierra la zona de corte; con él abierto no gira el cabezal.'],['Sujeción de pieza y utillaje','Mordaza o bridas bien apretadas antes de mecanizar.'],['Parada de husillo','Esperar a la parada total antes de abrir el protector o medir.']],
+rk:['Atrapamiento por fresa, husillo o utillaje en giro','Proyección de virutas, fragmentos de fresa y refrigerante','Cortes por filos de la fresa y virutas','Golpes por pieza o útil soltado','Contacto eléctrico','Ruido y exposición a taladrinas'],
+rg:['Protector de fresa / zona de corte con enclavamiento','Pantalla contra proyecciones en la mesa','Seta de parada de emergencia con enclavamiento','Bobina de mínima tensión contra rearranque','Freno de husillo o parada controlada','Carcasa de transmisión enclavada'],
+pa:['Comprobar resguardos y seta de emergencia','Montar la fresa bien apretada y retirar la llave','Fijar la pieza con mordaza o bridas','Seleccionar velocidad y avance según material y fresa','Despejar la mesa de herramientas y útiles'],
+pd:['No tocar fresa ni pieza en movimiento','No medir ni retirar viruta con la máquina en marcha','Mantener el protector cerrado durante el corte','No usar guantes ni trapos cerca de la fresa','Parar ante vibración, ruido o rotura de herramienta'],
+pp:['Esperar a la parada total del husillo','Desconectar la máquina','Retirar fresa y pieza con cuidado de los filos','Limpiar con brocha y ordenar el puesto'],
+lm:['Retirar la viruta solo con brocha o gancho y la máquina desconectada','<b>Prohibido soplar con aire comprimido</b> o limpiar con la mano','Desconectar y consignar antes de cambiar herramienta o engranajes','Revisar protectores, enclavamientos, cables y lubricación'],
+b:['glove','PROHIBIDO USAR GUANTES','Riesgo grave de atrapamiento y arrastre por la fresa o el husillo en giro.']},
+esmeriladora:{...T,n:'Esmeriladora de banco',c:'FUS-ESM-001',
+kp:[['Protector y pantalla','Protector envolvente de la muela y pantalla transparente ajustada.'],['Reposapiezas ajustado','A la distancia máxima que indique el fabricante (habitual 2–3 mm), con la máquina parada.'],['Estado de la muela','Sin grietas ni desgaste excesivo; prueba de sonido y giro en vacío antes de usar.'],['Parada de emergencia','Pulsador accesible, con enclavamiento.']],
+rk:['Proyección de partículas incandescentes y abrasivas','Rotura de la muela con proyección de fragmentos','Atrapamiento entre muela y reposapiezas','Cortes y quemaduras por rebabas o pieza caliente','Contacto eléctrico','Ruido y polvo'],
+rg:['Protector envolvente de muela del tamaño adecuado','Pantalla transparente regulable','Reposapiezas regulable y bien fijado','Seta de parada de emergencia con enclavamiento','Bobina de mínima tensión contra rearranque','Muela con velocidad máxima admisible ≥ la de la máquina'],
+pa:['Comprobar protector, pantalla y reposapiezas','Inspeccionar la muela (grietas, desgaste) y escuchar su sonido','Ajustar el reposapiezas con la máquina parada','Arrancar y esperar a plena velocidad antes de amolar','Colocarse a un lado, no frente a la muela'],
+pd:['Apoyar la pieza en el reposapiezas y avanzar sin golpear','No amolar por la cara lateral salvo muela apta','No forzar ni presionar en exceso','No amolar piezas pequeñas sin útil de sujeción','Parar ante vibración, ruido o muela dañada'],
+pp:['Esperar a la parada total de la muela','Desconectar la máquina','Retirar rebabas y limpiar con cepillo','Ordenar el puesto'],
+lm:['Limpiar el polvo con aspiración o cepillo, con la máquina parada','<b>Prohibido soplar con aire comprimido</b>','Cambio de muela solo por personal formado y con la máquina desconectada','Revisar fisuras, desgaste y reposapiezas antes del turno'],
+b:['hand','PROHIBIDO USAR SIN PANTALLA Y REPOSAPIEZAS','Riesgo de proyección y de atrapamiento entre muela y reposapiezas.'],
+ep:[['gog','Gafas o pantalla facial','Contra impactos (EN 166)'],...T.ep.slice(1)],
+pr:[...T.pr.slice(0,3),['hand','Amolar sin protecciones','Ni piezas pequeñas a mano']]},
+transpaleta:{...T,n:'Transpaleta eléctrica',c:'FUS-TRA-001',
+kp:[['Parada de emergencia','Corta la tracción. Comprobar al inicio del turno.'],['Freno y hombre muerto','Con el timón suelto o a fondo, la máquina debe frenar.'],['Horquillas y batería','Sin deformaciones; batería bien sujeta y sin fugas.'],['Capacidad de carga','No superar la placa de carga; carga estable y centrada.']],
+rk:['Atropello y aplastamiento de pies o piernas','Atrapamiento de manos entre timón y obstáculos','Caída o desplazamiento de la carga','Vuelco en rampas o suelos irregulares','Contacto eléctrico y riesgos en la carga de baterías','Sobreesfuerzos'],
+rg:['Parada de emergencia operativa','Freno de servicio y de estacionamiento operativos','Dispositivo de hombre muerto en el timón','Protecciones de ruedas y avisador acústico','Horquillas, ruedas y batería en buen estado','Placa de capacidad legible'],
+pa:['Comprobar freno, parada de emergencia y avisador','Revisar horquillas, ruedas, batería y mandos','Verificar el peso y la estabilidad de la carga','Despejar el recorrido y comprobar el suelo','Utilizar guantes y calzado de seguridad'],
+pd:['Circular a paso humano','Colocar la carga centrada y sin superar la capacidad','Mirar siempre en el sentido de la marcha','Reducir la velocidad en curvas, rampas y cruces','No transportar personas ni subirse a la máquina'],
+pp:['Dejarla en su lugar asignado con las horquillas bajadas','Aplicar el freno de estacionamiento y retirar la llave','Poner la batería a cargar según el procedimiento','Dejar el pasillo libre'],
+lm:['Limpiar con la máquina parada y la llave retirada','Cargar la batería en zona ventilada, sin llamas ni chispas','Revisar a diario ruedas, horquillas, frenos y mandos','Mantenimiento solo por personal autorizado'],
+b:['pers','PROHIBIDO TRANSPORTAR PERSONAS','Riesgo de caída, atropello y vuelco. No subirse a la máquina.'],
+ep:[['boot','Calzado de seguridad','Con puntera, contra aplastamiento'],['glove','Guantes de protección mecánica','Para el manejo de cargas y del timón'],['pers','Ropa ajustada o alta visibilidad','Si hay tráfico de carretillas']],
+pr:[['pers','Transportar personas','Ni subirse a la máquina'],['hand','Manos o pies bajo la carga','Fuera de la zona de aplastamiento']]},
+sierra:{...T,n:'Sierra de cinta para metal',c:'FUS-SCI-001',
+kp:[['Protector de cinta y volantes','Cierra toda la cinta salvo el tramo de corte; no retirarlo.'],['Guía de la hoja ajustada','A la altura de la pieza, lo más baja posible.'],['Seta de parada de emergencia','Accesible, con enclavamiento. Probar al inicio del turno.'],['Sujeción de la pieza','Firme en mordaza o apoyada; nunca sujeta a mano.']],
+rk:['Corte y atrapamiento por la hoja en movimiento','Rotura de la hoja con latigazo y proyección','Proyección de virutas y refrigerante','Atrapamiento en volantes y transmisión','Contacto eléctrico','Ruido'],
+rg:['Protector de volantes y cinta enclavado','Guía de hoja regulable con protector del tramo de corte','Seta de parada de emergencia con enclavamiento','Bobina de mínima tensión contra rearranque','Mordaza de sujeción de pieza operativa','Freno de cinta o parada rápida'],
+pa:['Comprobar protectores y seta de emergencia','Revisar tensión y estado de la hoja (dientes, grietas)','Ajustar la guía a la altura de la pieza','Sujetar la pieza con firmeza y apoyarla','Seleccionar velocidad y refrigerante según el material'],
+pd:['Avanzar la pieza o la sierra sin forzar','Mantener las manos alejadas de la hoja','No sujetar piezas pequeñas a mano: usar útiles','No retirar virutas con la hoja en marcha','Parar ante ruido anómalo o hoja dañada'],
+pp:['Esperar a la parada total de la hoja','Desconectar la máquina','Retirar pieza y recortes con cuidado de los filos','Limpiar con cepillo y ordenar el puesto'],
+lm:['Cambiar la hoja con la máquina desconectada y con guantes anticorte','Retirar la viruta solo con cepillo o gancho','<b>Prohibido soplar con aire comprimido</b>','Revisar protectores, refrigerante y estado de la hoja'],
+b:['hand','PROHIBIDO RETIRAR EL PROTECTOR DE LA HOJA','Riesgo grave de corte y atrapamiento por la hoja en movimiento.'],
+pr:[...T.pr.slice(0,3),['hand','Manos cerca de la hoja','Ni piezas pequeñas a mano']]},
+plegadora:{...T,n:'Plegadora hidráulica',c:'FUS-PLE-001',
+kp:[['Protección de la zona de plegado','Barrera fotoeléctrica o resguardo que detiene el movimiento al invadir la zona.'],['Pedal protegido','Con protección y parada; no debe activarse sin querer.'],['Seta de parada de emergencia','Accesible desde el frente y desde la parte trasera.'],['Topes traseros','Comprobar su fijación y evitar el atrapamiento al posicionar la chapa.']],
+rk:['Aplastamiento de manos o dedos entre punzón y matriz','Atrapamiento por los topes traseros en movimiento','Caída o golpe de la chapa al plegar','Cortes por bordes de chapa','Contacto eléctrico y fugas hidráulicas','Ruido'],
+rg:['Protección optoelectrónica o resguardo de la zona de plegado','Pedal protegido con parada de emergencia','Seta de parada de emergencia con enclavamiento','Resguardo de topes traseros y zona posterior','Velocidad de aproximación segura','Matrices y punzones bien fijados; circuito hidráulico sin fugas'],
+pa:['Comprobar protecciones, pedal y paradas','Verificar que punzón y matriz son adecuados y están fijados','Comprobar la capacidad de plegado de la chapa','Despejar la zona alrededor y detrás de la máquina','Planificar el plegado para no colocar las manos en la zona'],
+pd:['No introducir las manos en la zona de plegado','Usar útiles de sujeción en piezas pequeñas','Manejar chapas grandes con apoyos o entre dos personas','Un solo operario maneja el pedal','Detener ante fugas, ruidos o fallo de protección'],
+pp:['Dejar la corredera en posición de reposo','Desconectar la máquina','Retirar y apilar las chapas con seguridad','Ordenar y señalizar el puesto'],
+lm:['Limpiar y revisar con la máquina desconectada y bloqueada','Revisar fugas, nivel de aceite y mangueras','Mantenimiento solo por personal autorizado','Comprobar periódicamente protecciones y pedal'],
+b:['hand','PROHIBIDO INTRODUCIR LAS MANOS EN LA ZONA DE PLEGADO','Riesgo grave de aplastamiento entre punzón y matriz.'],ep:EPM,pr:PRM},
+cizalla:{...T,n:'Cizalla de guillotina',c:'FUS-CIZ-001',
+kp:[['Protector frontal de la cuchilla','Resguardo que impide llegar a la línea de corte.'],['Prensachapas','Sujeta la chapa antes del corte; comprobar que actúa.'],['Seta de parada de emergencia','Accesible, con enclavamiento.'],['Resguardo del tope trasero','Impide el acceso a la zona posterior.']],
+rk:['Corte y amputación por la cuchilla','Aplastamiento por el prensachapas','Cortes por bordes de chapa y recortes','Caída de chapa o de recortes','Contacto eléctrico','Ruido'],
+rg:['Resguardo frontal de la zona de corte','Prensachapas operativo','Seta de parada de emergencia con enclavamiento','Resguardo del tope trasero y zona posterior','Pedal protegido','Cuchillas en buen estado y bien reguladas'],
+pa:['Comprobar protecciones, prensachapas y paradas','Verificar el espesor y el material de la chapa','Revisar el estado de las cuchillas','Despejar la zona de corte y la bandeja de recortes','Posicionar la chapa con el tope trasero'],
+pd:['No introducir las manos bajo el prensachapas ni en la línea de corte','Cortar solo el espesor admitido','Retirar los recortes con la máquina parada','Un solo operario maneja el pedal','Detener ante ruido anómalo o cuchillas dañadas'],
+pp:['Dejar la cuchilla en posición de reposo','Desconectar la máquina','Retirar chapa y recortes con cuidado de los filos','Ordenar el puesto'],
+lm:['Ajuste o cambio de cuchillas solo por personal autorizado y con la máquina bloqueada','Retirar recortes con gancho o cepillo','Revisar protecciones y lubricación','Mantener libre la bandeja de recortes'],
+b:['hand','PROHIBIDO INTRODUCIR LAS MANOS EN LA LÍNEA DE CORTE','Riesgo grave de amputación por la cuchilla.'],ep:EPM,pr:PRM},
+amoladora:{...T,n:'Amoladora angular portátil',c:'FUS-AMA-001',
+kp:[['Protector del disco','Colocado y orientado hacia el operario; nunca retirarlo.'],['Disco adecuado','Del diámetro y velocidad correctos, sin grietas ni desgaste.'],['Empuñadura auxiliar','Siempre montada; sujetar con las dos manos.'],['Interruptor de hombre muerto','Se detiene al soltarlo; no bloquearlo en marcha.']],
+rk:['Rotura del disco con proyección de fragmentos','Proyección de chispas y partículas','Cortes por contacto con el disco','Retroceso (rebote) de la máquina','Contacto eléctrico','Ruido y polvo'],
+rg:['Protector del disco colocado','Empuñadura auxiliar montada','Interruptor de hombre muerto operativo','Disco adecuado a la velocidad máxima de la máquina','Cable y clavija en buen estado','Interruptor sin bloqueo en marcha'],
+pa:['Comprobar protector, empuñadura y cable','Inspeccionar el disco (grietas, desgaste, fecha)','Fijar la pieza con firmeza','Desconectar antes de cambiar el disco','Despejar el entorno de materiales inflamables'],
+pd:['Sujetar siempre con las dos manos','Dejar que el disco alcance la velocidad antes de cortar','No cortar con la cara lateral del disco','No forzar ni inclinar el disco en el corte','Esperar a la parada total antes de dejar la máquina'],
+pp:['Esperar a la parada total del disco','Desconectar de la red','Retirar chispas y partículas y recoger el cable','Guardar la máquina con su protector'],
+lm:['Cambiar el disco con la máquina desconectada','Revisar cable, clavija y carcasa','<b>No retirar nunca el protector</b>','Limpiar las rejillas con cepillo'],
+b:['hand','PROHIBIDO RETIRAR EL PROTECTOR DEL DISCO','Riesgo de proyección de fragmentos y de corte.'],
+ep:[['gog','Gafas y pantalla facial','Contra chispas e impactos (EN 166)'],['ear','Protección auditiva','Si se supera el nivel de acción'],['boot','Calzado de seguridad','Contra caída de piezas'],['pers','Ropa ajustada','Mangas ceñidas; ignífuga si hay chispas']],
+pr:[...T.pr.slice(0,3),['hand','Cortar sin protector','Ni piezas sin fijar']]},
+prensa:{...T,n:'Prensa hidráulica de taller',c:'FUS-PRE-001',
+kp:[['Zona de prensado resguardada','Impide el acceso entre émbolo y pieza.'],['Manómetro y válvula de seguridad','No superar la presión máxima de la placa.'],['Pantalla protectora','Contra la proyección de fragmentos al prensar.'],['Utillaje y apoyos','Piezas centradas, estables y con calzos adecuados.']],
+rk:['Aplastamiento de manos entre émbolo y pieza','Proyección de fragmentos o utillaje','Caída o desplazamiento de la pieza','Sobrepresión del circuito hidráulico','Fugas de aceite a presión','Ruido'],
+rg:['Resguardo o pantalla de la zona de prensado','Válvula limitadora y manómetro operativos','Mando de accionamiento protegido','Seta de parada de emergencia','Bastidor y mesa sin deformaciones','Circuito hidráulico sin fugas'],
+pa:['Comprobar pantalla, manómetro y paradas','Centrar y calzar la pieza sobre la mesa','Seleccionar utillaje y presión adecuados','No superar la capacidad máxima','Despejar a las personas de la zona'],
+pd:['No introducir las manos en la zona de prensado','Aplicar la presión de forma progresiva','Mantenerse fuera de la línea de proyección','Detener ante deformación o ruidos anómalos','No dejar la pieza bajo presión'],
+pp:['Liberar la presión y llevar el émbolo a reposo','Retirar la pieza y el utillaje','Desconectar la máquina','Ordenar el puesto'],
+lm:['Limpiar con la máquina desconectada y sin presión','Revisar fugas, mangueras y nivel de aceite','Mantenimiento solo por personal autorizado','Revisar periódicamente bastidor y soldaduras'],
+b:['hand','PROHIBIDO INTRODUCIR LAS MANOS EN LA ZONA DE PRENSADO','Riesgo grave de aplastamiento y de proyección de fragmentos.'],ep:EPM,
+pr:[PRM[0],PRM[1],PRM[2],['pers','Personas en la línea de proyección','Mantenerse a un lado']]},
+puente:{...T,n:'Puente grúa',c:'FUS-PGR-001',
+kp:[['Limitador de carga y finales de carrera','Impiden el sobrepeso y los topes de recorrido.'],['Gancho con pestillo de seguridad','Pestillo operativo y gancho sin deformaciones.'],['Parada de emergencia del mando','Accesible, con enclavamiento. Probar al inicio del turno.'],['Eslingas y accesorios','Revisados, con marcado legible y sin daños.']],
+rk:['Caída de la carga por eslingado deficiente o rotura de eslinga','Aplastamiento o golpes por la carga suspendida','Atrapamiento de manos entre la carga y obstáculos','Choques y balanceo de la carga al desplazarla','Contacto eléctrico (mando y alimentación)','Sobrecarga del equipo'],
+rg:['Limitador de carga y finales de carrera operativos','Gancho con pestillo de seguridad','Parada de emergencia del mando','Eslingas y accesorios revisados, con marcado legible','Placa de carga máxima visible','Revisiones e inspecciones periódicas al día'],
+pa:['Comprobar mando, parada de emergencia y finales de carrera','Revisar eslingas, ganchos y accesorios','Verificar el peso de la carga y la capacidad del equipo','Despejar y señalizar la zona de maniobra','Acordar las señales con el eslingador'],
+pd:['Elevar unos centímetros y comprobar la estabilidad antes de desplazar','Mantener la carga baja y sin balanceo','No pasar la carga sobre personas','Mantener la carga a la vista; usar un señalista si no se ve','No dejar la carga suspendida sin vigilancia'],
+pp:['Dejar la carga apoyada y estable antes de soltarla','Subir el gancho sin carga a una posición segura','Desconectar el mando o la alimentación','Guardar las eslingas en su lugar'],
+lm:['Mantenimiento solo por personal autorizado y con el equipo bloqueado','Retirar de servicio las eslingas con daños','Revisar cables, gancho, frenos y finales de carrera','Registrar revisiones e incidencias'],
+b:['pers','PROHIBIDO PERMANECER BAJO LA CARGA SUSPENDIDA','Riesgo grave de aplastamiento por caída o balanceo de la carga.'],
+ep:[['boot','Calzado de seguridad','Con puntera, contra aplastamiento'],['glove','Guantes de protección mecánica','Para el eslingado de cargas'],['pers','Ropa ajustada o alta visibilidad','Sin prendas sueltas'],['gog','Gafas de protección','Si hay riesgo de proyección']],
+pr:[['pers','Permanecer bajo la carga','Ni pasar por su trayectoria'],['hand','Guiar la carga con las manos','Usar cuerda guía o útil'],['pers','Elevar personas','Nunca subirse a la carga']]},
+soldadura:{...T,n:'Puesto de soldadura',c:'FUS-SOL-001',
+kp:[['Careta con filtro adecuado','Filtro según el proceso y la intensidad; sin grietas.'],['Extracción de humos','Captación localizada activa y bien orientada.'],['Cable de masa y portaelectrodos','Aislamiento íntegro y masa cerca de la pieza.'],['Zona delimitada y sin combustibles','Pantallas y retirada de inflamables; extintor a mano.']],
+rk:['Radiación óptica del arco y quemaduras','Humos y gases de soldadura','Contacto eléctrico','Incendio y explosión por chispas y proyecciones','Quemaduras por piezas calientes y salpicaduras','Ruido y fugas de gas (si se usa)'],
+rg:['Careta o pantalla con filtro adecuado','Extracción localizada de humos operativa','Cables, pinza de masa y portaelectrodos en buen estado','Pantallas o cortinas de protección en la zona','Extintor accesible y señalizado','Botellas de gas sujetas, con válvulas en buen estado'],
+pa:['Comprobar equipo, cables y conexiones','Activar la extracción y delimitar la zona','Retirar materiales combustibles del entorno','Comprobar extintor y vías de evacuación','Colocar el EPI completo'],
+pd:['Usar siempre la careta con filtro adecuado al soldar','No soldar recipientes que hayan contenido inflamables sin autorización','Mantener secos guantes y ropa; evitar suelos mojados','Evitar la inhalación directa de los humos','Vigilar chispas y posibles focos de ignición'],
+pp:['Desconectar el equipo y cerrar el gas','Dejar enfriar la pieza y señalizarla como caliente','Revisar la zona por posibles focos de ignición','Recoger cables y ordenar el puesto'],
+lm:['Mantenimiento eléctrico solo por personal autorizado','Revisar cables, pinzas y aislamientos','Cambiar periódicamente los filtros de extracción','Almacenar las botellas sujetas y con capuchón'],
+b:['pers','PROHIBIDO SOLDAR SIN PROTECCIÓN OCULAR Y EXTRACCIÓN','Riesgo de lesión ocular por el arco y de inhalación de humos.'],
+ep:[['gog','Careta con filtro de soldadura','Contra el arco y las proyecciones'],['glove','Guantes de soldador','Aislantes y resistentes al calor'],['boot','Calzado de seguridad','Resistente a chispas y calor'],['pers','Ropa ignífuga','Sin bolsillos abiertos ni prendas sintéticas']],
+pr:[['hand','Soldar sin pantalla','Ni mirar el arco sin protección'],['pers','Soldar sin extracción','Ni en espacios cerrados sin ventilación'],['shirt','Ropa sintética o con grasa','Es inflamable']]},
+compresor:{...T,n:'Compresor de aire',c:'FUS-COM-001',
+kp:[['Válvula de seguridad','Precintada; no manipularla ni anularla.'],['Manómetro y presostato','Comprobar que la presión se mantiene dentro de la placa.'],['Purga del depósito','Drenar el condensado según el programa de mantenimiento.'],['Protectores de correas y poleas','Siempre colocados y fijos.']],
+rk:['Rotura o explosión del depósito a presión','Proyección de partículas y fluido a presión','Atrapamiento en correas, poleas y volante','Contacto eléctrico','Ruido','Quemaduras por superficies calientes'],
+rg:['Válvula de seguridad precintada y operativa','Manómetro y presostato operativos','Protector de correas y poleas colocado','Parada de emergencia o interruptor accesible','Depósito sin corrosión ni golpes, con placa legible','Ubicación ventilada, protegida y señalizada'],
+pa:['Comprobar protectores, manómetro y válvula','Revisar mangueras y racores','Verificar el drenaje del condensado','Comprobar el nivel de aceite (si aplica)','Despejar el entorno del equipo'],
+pd:['No superar la presión máxima de trabajo','No dirigir aire comprimido hacia personas','Vigilar ruidos, vibraciones y sobrecalentamiento','No manipular válvulas ni protectores en marcha','Parar ante cualquier fuga importante'],
+pp:['Cerrar el suministro y despresurizar el circuito','Desconectar el compresor','Drenar el condensado según el programa','Dejar las mangueras recogidas'],
+lm:['Mantenimiento solo por personal autorizado, con el equipo despresurizado y bloqueado','Revisar mangueras, racores y filtros','Drenar el condensado periódicamente','Registrar las revisiones e inspecciones periódicas del depósito'],
+b:['hand','PROHIBIDO DIRIGIR EL AIRE A PRESIÓN HACIA PERSONAS','Riesgo de lesión grave por proyección de partículas y aire a presión.'],
+pr:[['hand','Aire a presión sobre personas','Ni para limpiarse la ropa'],['shirt','Ropa holgada','Riesgo de atrapamiento en correas'],['hand','Manipular válvulas o protectores en marcha','Parar y despresurizar antes']]},
+carretilla:{...T,n:'Carretilla elevadora',c:'FUS-CAR-001',
+kp:[['Cinturón o sistema de retención','Abrochado siempre durante la conducción.'],['Pórtico de seguridad','Estructura de protección en buen estado, sin modificaciones.'],['Placa de capacidad','Respetar el centro de carga; no superarla.'],['Avisador acústico y luces','Operativos; usar el avisador en cruces y en marcha atrás.']],
+rk:['Atropello y colisión con personas o estructuras','Vuelco de la carretilla','Caída de la carga','Aplastamiento por la carga o el mástil','Atrapamiento de manos en el mástil','Contacto eléctrico y riesgos en la carga de batería o el repostaje'],
+rg:['Cinturón de seguridad o sistema de retención','Pórtico y protector de carga en buen estado','Freno de servicio y de estacionamiento','Avisador acústico, luces y baliza','Placa de capacidad legible','Horquillas sin grietas ni deformaciones'],
+pa:['Conducir solo con formación y autorización','Hacer la revisión diaria: frenos, dirección, luces y avisador','Revisar horquillas, mástil, cadenas y neumáticos','Comprobar el nivel de batería o combustible','Verificar el peso y la estabilidad de la carga','Abrocharse el cinturón'],
+pd:['Circular con la carga baja y el mástil inclinado hacia atrás','Respetar la velocidad y la señalización','Mirar en el sentido de la marcha; usar el avisador en cruces','Reducir la velocidad en curvas, rampas y cruces','No elevar personas ni transportar pasajeros'],
+pp:['Estacionar en la zona asignada con las horquillas en el suelo','Aplicar el freno de estacionamiento y retirar la llave','Cargar la batería o repostar según el procedimiento','Dejar el pasillo libre'],
+lm:['Mantenimiento solo por personal autorizado','Cargar la batería o repostar en zona ventilada y sin focos de ignición','Revisar cadenas, mástil, neumáticos y frenos','Retirar de servicio ante cualquier deficiencia'],
+b:['pers','PROHIBIDO TRANSPORTAR O ELEVAR PERSONAS','Riesgo de caída, atropello y vuelco.'],
+ep:[['boot','Calzado de seguridad','Con puntera, contra aplastamiento'],['pers','Ropa de alta visibilidad','En zonas con tráfico peatonal'],['glove','Guantes de protección','Para el manejo de cargas'],['ear','Protección auditiva','Si se supera el nivel de acción']],
+pr:[['pers','Transportar o elevar personas','Ni subirse a las horquillas'],['pers','Pasar bajo la carga elevada','Ni permanecer en la zona'],['hand','Manos en el mástil','Fuera de la zona de atrapamiento']]}};
+const ul=(id,a,f=mkli,c='')=>`<${id[0]=='p'?'ol':'ul'} class="l ${c}" id="${id}">${a.map(x=>f(x)).join('')}</${id[0]=='p'?'ol':'ul'}>`;
+const mkrow=()=>`<tr class="rm"><td class="n"></td><td>${E('')}</td><td>${E('')}</td><td>${E('')}</td><td>${E('')}${X}</td></tr>`;
+const REG=D=>`<div class="sec"><h3>8. Registro de entrega e información a los trabajadores</h3><div class="sb"><p style="margin:0 0 5px">${E('Los trabajadores firmantes declaran haber recibido la ficha de uso seguro del equipo «'+D.n+'» (código '+D.c+'), haber sido informados de sus riesgos y medidas preventivas y comprometerse a cumplirlas (arts. 18 y 19 LPRL).')}</p><div class="fg" style="grid-template-columns:repeat(3,1fr);border-top:1.5px solid #1E293B"><div><small>Impartido por</small>${E('—')}</div><div><small>Fecha</small>${E('dd/mm/aaaa')}</div><div><small>Duración</small>${E('—')}</div></div><table><thead><tr><th style="width:8mm">N.º</th><th>Nombre y apellidos</th><th>Puesto</th><th style="width:24mm">Fecha</th><th style="width:40mm">Firma</th></tr></thead><tbody id="rt">${Array.from({length:12},mkrow).join('')}</tbody></table>${ad('row','#rt','Añadir fila')}</div></div>`;
+function build(){const D=LIB[mid];doc.innerHTML=`
+<section class="pg">
+<div class="hd"><div class="logo"><div class="slot empty" data-max="500"><div class="ph ctl">🏢 Logotipo de la empresa</div><img alt=""><div class="sc ctl"><button data-a="fit">⤢</button><button data-a="del">🗑</button></div></div></div>
+<div class="tt"><span class="t1">${E('FICHA DE USO SEGURO DE EQUIPO DE TRABAJO')}</span><span class="t2">${E(D.n)}</span></div></div>
+<div class="fg">${hf.map((x,i)=>{let[a,b]=x.split('|');if(!i)b=D.c;return`<div><small>${a}</small>${E(b)}</div>`}).join('')}</div>
+<div class="sec"><h3>1. Identificación visual y puntos clave de seguridad</h3><div class="id"><div class="main">${slot()}</div><div><div id="gal">${D.kp.map(x=>mkcard(...x)).join('')}</div>${ad('card','#gal','Añadir punto clave')}</div></div></div>
+<div class="sec"><h3>2. Riesgos principales</h3><div class="sb">${ul('rk',D.rk)}${ad('li','#rk','Añadir riesgo')}</div></div>
+<div class="sec"><h3>3. Resguardos y dispositivos de seguridad obligatorios (RD 1215/1997)</h3><div class="sb">${ul('rg',D.rg,mkchk,'k')}${ad('chk','#rg','Añadir verificación')}</div></div>
+</section>
+<section class="pg">
+<div class="sec"><h3>4. EPIs obligatorios y prohibiciones críticas (pictogramas tipo ISO 7010)</h3><div class="sb">
+<div class="ban">${P(G[D.b[0]])}<div><b>${E(D.b[1])}</b><span>${E(D.b[2])}</span></div></div>
+<div class="two"><div><h5 style="color:#005BBB">EPIs OBLIGATORIOS</h5><div class="ig">
+${D.ep.map(x=>it(EP[x[0]],x[1],x[2])).join('')}</div></div>
+<div><h5 style="color:#DC2626">PROHIBICIONES</h5><div class="ig">
+${D.pr.map(x=>it(P(G[x[0]]),x[1],x[2])).join('')}</div></div></div></div></div>
+<div class="sec"><h3>5. Procedimiento de uso seguro</h3><div class="three">
+<div class="col"><h5 style="background:#005BBB">ANTES</h5>${ul('pa',D.pa)}${ad('li','#pa','Añadir paso')}</div>
+<div class="col"><h5 style="background:#B45309">DURANTE</h5>${ul('pd',D.pd)}${ad('li','#pd','Añadir paso')}</div>
+<div class="col"><h5 style="background:#15803D">DESPUÉS</h5>${ul('pp',D.pp)}${ad('li','#pp','Añadir paso')}</div></div></div>
+<div class="sec"><h3>6. Limpieza, mantenimiento básico e incidencias</h3><div class="sb">${ul('lm',D.lm)}${ad('li','#lm','Añadir punto')}
+<div class="oos"><b>${E('Avería o resguardo anulado:')}</b> ${E('detener la máquina, desconectarla, señalizar «FUERA DE SERVICIO» y avisar al responsable. No usar hasta su reparación y verificación.')}</div></div></div>
+<div class="sec"><h3>7. Validación y control documental</h3><div class="sb"><table>
+<tr><th></th><th>Elaborado por</th><th>Revisado PRL</th><th>Aprobado Dirección</th><th>Recibí trabajador</th></tr>
+<tr><th>Nombre</th>${'<td>'+E('')+'</td>'.repeat(4)}</tr><tr><th>Fecha</th>${'<td>'+E('')+'</td>'.repeat(4)}</tr><tr><th>Firma</th>${'<td class="sg">'+E('')+'</td>'.repeat(4)}</tr>
+<tr><th>Próxima revisión</th><td colspan="4">${E('dd/mm/aaaa')}</td></tr></table></div></div>
+</section>
+<section class="pg">${REG(D)}</section>`}
+function save(){try{$$('input[type=checkbox]').forEach(c=>c.toggleAttribute('checked',c.checked));localStorage.setItem(K0+mid,JSON.stringify({t:Date.now(),h:doc.innerHTML,e:hd.checked}));$('#st').textContent='✔ Guardado'}catch(e){$('#st').textContent='⚠ No se pudo guardar (imágenes muy pesadas)'}}
+function load(f,s){if(!f||!f.type.startsWith('image/'))return;const r=new FileReader;r.onload=()=>{const im=new Image;im.onload=()=>{const m=+s.dataset.max||1200,k=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);const x=c.getContext('2d'),png=/png|webp/.test(f.type);if(!png){x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height)}x.drawImage(im,0,0,c.width,c.height);$('img',s).src=c.toDataURL(png?'image/png':'image/jpeg',.82);s.classList.remove('empty');save()};im.src=r.result};r.readAsDataURL(f)}
+doc.addEventListener('click',e=>{const b=e.target.closest('button[data-a]'),s=e.target.closest('.slot');
+if(b){const a=b.dataset.a;if(a=='fit')s.classList.toggle('contain');
+else if(a=='del'){$('img',s).removeAttribute('src');s.classList.add('empty');s.classList.remove('contain')}
+else if(a=='rm')b.closest('.rm').remove();
+else if(a=='add'){const t=$(b.dataset.to);t.insertAdjacentHTML('beforeend',{li:mkli,chk:mkchk,card:mkcard,row:mkrow}[b.dataset.t]());const f=$('.e',t.lastElementChild);f&&f.focus()}
+save();return}
+if(s){cur=s;fi.value='';cam.checked?fi.setAttribute('capture','environment'):fi.removeAttribute('capture');fi.click()}});
+fi.onchange=()=>load(fi.files[0],cur);const cam=$('#cam');cam.checked=matchMedia('(hover:none)').matches;
+doc.addEventListener('dragover',e=>{if(e.target.closest('.slot'))e.preventDefault()});
+doc.addEventListener('drop',e=>{const s=e.target.closest('.slot');if(s){e.preventDefault();load(e.dataTransfer.files[0],s)}});
+doc.addEventListener('paste',e=>{if(e.target.closest('.e')){e.preventDefault();document.execCommand('insertText',false,e.clipboardData.getData('text/plain'))}});
+doc.addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.closest('.e')&&!e.target.matches('p'))e.preventDefault()});
+let tm;doc.addEventListener('input',()=>{clearTimeout(tm);tm=setTimeout(save,400)});doc.addEventListener('change',save);
+hd.onchange=()=>{document.body.classList.toggle('ho',hd.checked);save()};
+$('#bp').onclick=()=>{$('#st').textContent='En el diálogo de impresión elige «Guardar como PDF» y compártelo';window.print()};
+$('#bd').onclick=()=>{save();document.body.dataset.t=Date.now();$$('[contenteditable]').forEach(n=>n.blur());const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['<!DOCTYPE html>\n'+document.documentElement.outerHTML],{type:'text/html'}));a.download='Ficha_Seguridad.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+$('#br').onclick=()=>{if(confirm('¿Restaurar los valores por defecto? Se perderán todos los cambios e imágenes.')){try{localStorage.removeItem(K0+mid)}catch(e){}document.body.dataset.t=Date.now();hd.checked=true;document.body.classList.add('ho');build();$('#st').textContent='Valores por defecto restaurados'}};
+sel.innerHTML=Object.keys(LIB).map(k=>`<option value="${k}">${LIB[k].n}</option>`).join('');
+function loadM(init){let o=null;try{o=JSON.parse(localStorage.getItem(K0+mid))}catch(e){}
+if(o&&(!init||o.t>(+document.body.dataset.t||0))){doc.innerHTML=o.h;hd.checked=!!o.e}else if(!init||!doc.children.length)build();
+document.body.classList.toggle('ho',hd.checked);document.body.dataset.m=mid;sel.value=mid;try{localStorage.setItem(K0+'last',mid)}catch(e){}}
+sel.onchange=()=>{save();mid=sel.value;loadM(false)};
+try{mid=document.body.dataset.m||localStorage.getItem(K0+'last')||'taladro'}catch(e){mid=document.body.dataset.m||'taladro'}
+if(!LIB[mid])mid='taladro';loadM(true);
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script></body></html>
